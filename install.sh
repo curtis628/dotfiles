@@ -7,6 +7,7 @@ ln -s $PWD/gitconfig           $HOME/.gitconfig
 ln -s $PWD/gitignore_global    $HOME/.gitignore_global
 ln -s $PWD/commit_template.txt $HOME/.commit_template.txt
 ln -s $PWD/vimrc               $HOME/.vimrc
+ln -s $PWD/bin/                $HOME/bin
 
 echo "=== Sourcing my new .profile"
 source $HOME/.profile
