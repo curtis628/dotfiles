@@ -1,0 +1,21 @@
+[core]
+	editor = vim
+	excludesfile = /Users/tcurtis/gitignore.txt
+[user]
+	name = Tyler Curtis
+	email = tcurtis@vmware.com
+[color]
+	ui = true
+[push]
+	default = simple
+[commit]
+	template = /Users/tcurtis/commit_template.txt
+[diff]
+	tool = kdiff3
+[merge]
+	tool = kdiff3
+[alias]
+	dt = difftool -y
+	logdate = log --format=\"%h %cd %ae - %s\" --date=local
+[reviewboard]
+	url = https://reviewboard.eng.vmware.com/
