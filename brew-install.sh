@@ -5,4 +5,4 @@
 
 # NOTE: Likely need to install XCode before this succeeds...
 brew install bash-completion git bash-git-prompt kdiff3 tomcat7 rabbitmq vim macvim jq python cask
-brew cask install dockertoolbox vagrant
+brew cask install dockertoolbox vagrant rbtools
