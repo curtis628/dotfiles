@@ -17,5 +17,6 @@
 [alias]
 	dt = difftool -y
 	logdate = log --format=\"%h %cd %ae - %s\" --date=local
+	incoming = "!git remote update -p; git log ..@{u}"
 [reviewboard]
 	url = https://reviewboard.eng.vmware.com/
