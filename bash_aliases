@@ -22,7 +22,7 @@ alias gobuild_vrva="gobuild sandbox queue vrva --branch master --buildtype beta 
 
 # Some git aliases
 alias gitroot='git rev-parse --show-cdup'
-alias cdgitroot='cd ./$(gitroot)':wq
+alias cdgitroot='cd ./$(gitroot)'
 
 # Some docker aliases
 alias dockerip='export DHOST=$(docker-machine ip default)'
