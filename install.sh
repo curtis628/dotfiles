@@ -9,6 +9,12 @@ ln -s $PWD/commit_template.txt $HOME/.commit_template.txt
 ln -s $PWD/vimrc               $HOME/.vimrc
 ln -s $PWD/bin/                $HOME/bin
 
+# .profile_private contain sensitive data I don't want checked into github
+# This links it so I can use it, but won't fail if someone reuses my dotfiles
+if [ -f $PWD/.profile_private ]; then
+    ln -s $PWD/.profile_private $HOME/.profile_private
+fi
+
 echo "=== Sourcing my new .profile"
 source $HOME/.profile
 
