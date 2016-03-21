@@ -132,6 +132,7 @@ set hidden              " Don't warm me about hidden buffers: http://vimcasts.or
 set nobackup            " We'll use git for backups... not vim
 set noswapfile          " We'll use git for backups... not vim
 set modelines=1         " Check bottom of the file for file-specific settings
+au BufEnter /private/tmp/crontab.* setl backupcopy=yes " Allows vim to be used for editing crontab since we use nobackup
 
 " .vimrc Shortcuts {{{
 " Source the vimrc file after saving it
