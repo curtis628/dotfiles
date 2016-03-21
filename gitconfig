@@ -22,3 +22,6 @@
 	url = https://reviewboard.eng.vmware.com/
 [credential]
 	helper = osxkeychain
+[gitreview]
+	remote = origin
+	username = tcurtis
