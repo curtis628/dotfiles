@@ -1,4 +1,4 @@
-.profile_private
+profile.private
 /api-tools/*.json
 /api-tools/*.xml
 /api-tools/*.pyc

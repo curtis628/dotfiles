@@ -1,0 +1,9 @@
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export BREW_BIN=/usr/local/bin
+export BREW_SBIN=/usr/local/sbin
+export PATH=$BREW_BIN:$BREW_SBIN:$PATH
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+  complete -C aws_completer aws
+fi
