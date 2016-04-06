@@ -26,6 +26,7 @@ alias cdgitroot='cd ./$(gitroot)'
 
 # Some docker aliases
 alias dockerip='export DHOST=$(docker-machine ip default)'
+alias init_docker='eval $(docker-machine env default)'
  
 # Make grep more user friendly by highlighting matches
 alias grep='grep --color=auto'
