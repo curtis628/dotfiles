@@ -23,6 +23,7 @@ Plugin 'Lokaltog/vim-easymotion' " Fast motions: https://github.com/Lokaltog/vim
 Plugin 'scrooloose/nerdtree' " Tree explorer: https://github.com/scrooloose/nerdtree
 Plugin 'bling/vim-airline' " Statusline plugin: https://github.com/bling/vim-airline
 Plugin 'tpope/vim-surround' " Surroundings: https://github.com/tpope/vim-surround
+Plugin 'editorconfig/editorconfig-vim' "EditorConfig: https://github.com/editorconfig/editorconfig-vim
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
