@@ -42,3 +42,5 @@ if [ -f ~/workspace/dotfiles/bash-git-prompt/gitprompt.sh ]; then
     source ~/workspace/dotfiles/bash-git-prompt/gitprompt.sh
 fi
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
