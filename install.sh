@@ -13,7 +13,7 @@ ln -s $PWD/bin/                $HOME/bin
 # .profile_private contain sensitive data I don't want checked into github
 # This links it so I can use it, but won't fail if someone reuses my dotfiles
 if [ -f $PWD/profile.private ]; then
-    ln -s $PWD/.profile.private $HOME/.profile.private
+    ln -s $PWD/profile.private $HOME/.profile.private
 fi
 
 echo "=== Checking out git submodules: vundle (used to manage VIM plugins) and bash-git-prompt"
