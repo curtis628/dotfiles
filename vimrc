@@ -51,7 +51,7 @@ nmap <leader>nt :NERDTree<CR>
 
 " Colors {{{
 syntax enable       " enable syntax processing
-set background=dark
+set background=light
 colorscheme solarized " options: badwolf, desert, solarized
 set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h11
 " }}}
@@ -81,7 +81,6 @@ set hlsearch            " highlight matches
 nnoremap <leader><space> :nohlsearch<CR>
 set ignorecase          " case-insensitive searches ...
 set smartcase           " ... unless there's a capital letter in the search
-set wildignore+=*/target/*    " Ignore all files under 'target' mvn directory
 " }}}
 
 " Folding {{{
@@ -113,7 +112,8 @@ map <C-_> <C-w><C-_>
 
 " Ctrl-P Settings {{{
 let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_working_path_mode = 0 " Have Ctrl-P honor CWD
+" let g:ctrlp_working_path_mode = 0 " Have Ctrl-P honor CWD
+let g:ctrlp_working_path_mode = 'ra' " Have Ctrl-P set CWD from .git or CWD
 let g:ctrlp_max_files = 80000 " Bump up number of files to search
 set wildignore+=*/target/*,*.swp,*.zip     " MacOSX/Linux
 " }}}
