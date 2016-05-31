@@ -44,6 +44,7 @@ alias j8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
 
 # Shortcuts to other apps
 alias xpra='/Applications/Xpra.app/Contents/MacOS/Xpra'
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
 # Tomcat aliases
 alias tclogs='cd $CATALINA_BASE/logs'
