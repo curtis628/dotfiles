@@ -12,7 +12,7 @@ shopt -s histappend
 # instead of after closing the session.
 PROMPT_COMMAND='history -a'
 
-export MAVEN_OPTS="-Xmx2048m -XX:MaxPermSize=512m"
+export MAVEN_OPTS="-Xmx2048m"
 export PATH=$HOME/bin:$PATH
 
 # Tomcat-specific
