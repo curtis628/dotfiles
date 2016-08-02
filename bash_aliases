@@ -27,6 +27,9 @@ alias cdgitroot='cd ./$(gitroot)'
 # Some docker aliases
 alias dockerip='export DHOST=$(docker-machine ip default)'
 alias init_docker='eval $(docker-machine env default)'
+# Useful if using Docker for Mac and boot2docker vars are set
+alias uninit_docker='unset ${!DOCKER_*}'
+alias set_docker_api_version='export DOCKER_API_VERSION=1.23'
  
 # Make grep more user friendly by highlighting matches
 alias grep='grep --color=auto'
