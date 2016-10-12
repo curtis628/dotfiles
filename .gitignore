@@ -2,3 +2,4 @@ profile.private
 /api-tools/*.json
 /api-tools/*.xml
 /api-tools/*.pyc
+bin/populate-symphony-data.sh
