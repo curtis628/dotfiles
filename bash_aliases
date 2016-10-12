@@ -30,6 +30,13 @@ alias init_docker='eval $(docker-machine env default)'
 # Useful if using Docker for Mac and boot2docker vars are set
 alias uninit_docker='unset ${!DOCKER_*}'
 alias set_docker_api_version='export DOCKER_API_VERSION=1.23'
+
+# k8s aliases
+alias busybox_kubectl='kubectl run test-pod --image=radial/busyboxplus:curl -it --restart=Never --rm'
+alias k8s_localrouteadd='sudo route add 10.0.0.0/24 192.168.99.100'
+alias k8s_localroutedelete='sudo route delete 10.0.0.0/24 192.168.99.100'
+alias k8s_opensymphony='open http://`kubectl get service heimdall-service --output=jsonpath="{.spec.clusterIP}"`/loginui'
+alias kpod='kubectl get pod -o wide'
  
 # Make grep more user friendly by highlighting matches
 alias grep='grep --color=auto'
