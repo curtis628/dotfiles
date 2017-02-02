@@ -46,7 +46,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Helpful commands for symphony/heimdall development
-export WORKSPACE=/Users/tcurtis/workspace/heimdall
-export BUILD_NUMBER=1
-export PYTHONPATH=/Users/tcurtis/workspace/symphony-infra/kubernetes-jenkins/aws/bin/
+export SYMPHONY_SRC=/Users/tcurtis/workspace/symphony
+export HEIMDALL_SRC=/Users/tcurtis/workspace/heimdall
+export SYMPHONY_INFRA_SRC=/Users/tcurtis/workspace/symphony-infra
 export DEPLOYMENT_PREFIX=minikube
