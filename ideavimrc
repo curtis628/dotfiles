@@ -1,2 +1,13 @@
 " jk is escape
+let mapleader=","
 inoremap jk <esc>
+
+set incsearch
+set hlsearch
+
+set ignorecase
+set smartcase
+
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
