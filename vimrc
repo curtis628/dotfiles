@@ -24,6 +24,7 @@ Plugin 'scrooloose/nerdtree' " Tree explorer: https://github.com/scrooloose/nerd
 Plugin 'bling/vim-airline' " Statusline plugin: https://github.com/bling/vim-airline
 Plugin 'tpope/vim-surround' " Surroundings: https://github.com/tpope/vim-surround
 Plugin 'editorconfig/editorconfig-vim' "EditorConfig: https://github.com/editorconfig/editorconfig-vim
+Plugin 'nvie/vim-flake8' "Flake8: https://github.com/nvie/vim-flake8
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
