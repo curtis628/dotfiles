@@ -33,9 +33,9 @@ alias set_docker_api_version='export DOCKER_API_VERSION=1.23'
 
 # k8s aliases
 alias busybox_kubectl='kubectl run test-pod --image=radial/busyboxplus:curl -it --restart=Never --rm'
-alias k8s_localrouteadd='sudo route add 10.0.0.0/24 192.168.99.100'
-alias k8s_localroutedelete='sudo route delete 10.0.0.0/24 192.168.99.100'
-alias k8s_opensymphony='open http://`kubectl get service heimdall-service --output=jsonpath="{.spec.clusterIP}"`/loginui'
+alias debugcontainer_kubectl='kubectl run test-pod --image=rrevo/debug-container -it --restart=Never --rm'
+alias k8s_heimdall_portforward='kubectl port-forward $(kubectl get pod -l app=heimdall --output=jsonpath={.items[0].metadata.name}) 8000:80 9091'
+alias k8s_opensymphony='open http://localhost:8000/loginui'
 alias kpod='kubectl get pod -o wide'
  
 # Make grep more user friendly by highlighting matches
@@ -47,6 +47,7 @@ alias cls='clear'
 # Alias to pretty-print XML and JSON  using python
 alias ppxml='python -c "import sys, xml.dom.minidom; print xml.dom.minidom.parseString(sys.stdin.read()).toprettyxml()"'
 alias ppjson='python -mjson.tool'
+alias jq_get='curl -Lo jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64'
 
 # Easily switch between Java versions
 alias j7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
