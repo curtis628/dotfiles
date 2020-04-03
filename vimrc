@@ -19,12 +19,14 @@ Plugin 'altercation/vim-colors-solarized' " https://github.com/altercation/vim-c
 " VIM Plugins
 Plugin 'sjl/gundo.vim' " Super-Undo:  https://github.com/sjl/gundo.vim
 Plugin 'kien/ctrlp.vim' " Fuzzy-file/buffer search: https://github.com/kien/ctrlp.vim 
-Plugin 'Lokaltog/vim-easymotion' " Fast motions: https://github.com/Lokaltog/vim-easymotion
+Plugin 'easymotion/vim-easymotion' " Fast motions: https://github.com/easymotion/vim-easymotion
 Plugin 'scrooloose/nerdtree' " Tree explorer: https://github.com/scrooloose/nerdtree
 Plugin 'bling/vim-airline' " Statusline plugin: https://github.com/bling/vim-airline
 Plugin 'tpope/vim-surround' " Surroundings: https://github.com/tpope/vim-surround
 Plugin 'editorconfig/editorconfig-vim' "EditorConfig: https://github.com/editorconfig/editorconfig-vim
 Plugin 'nvie/vim-flake8' "Flake8: https://github.com/nvie/vim-flake8
+Plugin 'archseer/colibri.vim' "Subtle, elegant color scheme: https://github.com/archSeer/colibri.vim
+Plugin 'integralist/vim-mypy' "Static type checker MyPy https://github.com/Integralist/vim-mypy
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -42,7 +44,7 @@ filetype plugin indent on    " required
 " Leader Shortcuts {{{
 let mapleader=","       " leader is comma
 " jk is escape
-inoremap jk <esc>
+inoremap ht <esc>
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
 " Shortcut to rapidly toggle `set list`
@@ -52,8 +54,8 @@ nmap <leader>nt :NERDTree<CR>
 
 " Colors {{{
 syntax enable       " enable syntax processing
-set background=light
-colorscheme solarized " options: badwolf, desert, solarized
+set background=dark
+colorscheme colibri " options: badwolf, desert, solarized, colibri
 set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h11
 " }}}
 
@@ -100,6 +102,7 @@ nnoremap j gj
 nnoremap k gk
 " highlight last inserted text
 nnoremap gV `[v`]
+let g:EasyMotion_smartcase = 1
 " }}}
 
 " Windows {{{
@@ -129,10 +132,12 @@ let g:airline_powerline_fonts = 1
 set laststatus=2
 " }}}
 
+" Swap Files {{{
+set directory^=$HOME/.vim/tmp//  " Store all swap files here: https://vi.stackexchange.com/questions/177/what-is-the-purpose-of-swap-files
+" }}}
+
 " Miscellaneous {{{
 set hidden              " Don't warm me about hidden buffers: http://vimcasts.org/episodes/working-with-buffers/
-set nobackup            " We'll use git for backups... not vim
-set noswapfile          " We'll use git for backups... not vim
 set modelines=1         " Check bottom of the file for file-specific settings
 au BufEnter /private/tmp/crontab.* setl backupcopy=yes " Allows vim to be used for editing crontab since we use nobackup
 

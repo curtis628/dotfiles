@@ -15,8 +15,8 @@ alias lsd="ls -alhFG | grep /$"
 alias back='cd $OLDPWD'
 
 # Some maven aliases...
-alias mci="mvn clean install"
-alias mcis="mvn clean install -DskipTests -PgwtSpeedup -Dgwt.compile.user.agent=chrome -DskipLibs=true -Denunciate.skip=true -DskipDocs "
+alias mci="mvn clean install -T 1C"
+alias mcis="mvn clean install -DskipTests -T 1C"
 alias gobuild_master="gobuild sandbox queue --accept-defaults --branch master --changeset master vcac-suite"
 alias gobuild_vrva="gobuild sandbox queue vrva --branch master --buildtype beta --no-changeset --accept-defaults --no-store-trees --component-builds vcac-suite=sb-$SB_VCAC_SUITE_BUILD_NUM --override-branch"
 
@@ -32,11 +32,12 @@ alias uninit_docker='unset ${!DOCKER_*}'
 alias set_docker_api_version='export DOCKER_API_VERSION=1.23'
 
 # k8s aliases
-alias busybox_kubectl='kubectl run test-pod --image=radial/busyboxplus:curl -it --restart=Never --rm'
-alias debugcontainer_kubectl='kubectl run test-pod --image=rrevo/debug-container -it --restart=Never --rm'
-alias k8s_heimdall_portforward='kubectl port-forward $(kubectl get pod -l app=heimdall --output=jsonpath={.items[0].metadata.name}) 8000:80 9091'
+alias busybox_kubectl='kubectl run ${USER}-busyboxpod --image=radial/busyboxplus:curl -it --restart=Never --rm'
+alias debugcontainer_kubectl='kubectl run ${USER}-debugpod --image=rrevo/debug-container -it --restart=Never --rm'
+alias debugkafkacontainer_kubectl='kubectl run ${USER}-debugpod --image=curtis628/kafka-cli-client -it --restart=Never --rm'
+alias k8s_heimdall_portforward='kubectl port-forward $(kubectl get pod -l app=heimdall --output=jsonpath={.items[0].metadata.name}) 8000:80 8443:443 9091'
 alias k8s_opensymphony='open http://localhost:8000/loginui'
-alias kpod='kubectl get pod -o wide'
+alias kpod='kubectl get pod -o wide -L removekey'
  
 # Make grep more user friendly by highlighting matches
 alias grep='grep --color=auto'
