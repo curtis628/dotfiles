@@ -3,3 +3,4 @@ profile.private
 /api-tools/*.xml
 /api-tools/*.pyc
 bin/populate-symphony-data.sh
+fish-functions/etc/.jfrog-docker-passwd
