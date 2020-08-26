@@ -26,7 +26,6 @@ Plugin 'tpope/vim-surround' " Surroundings: https://github.com/tpope/vim-surroun
 Plugin 'editorconfig/editorconfig-vim' "EditorConfig: https://github.com/editorconfig/editorconfig-vim
 Plugin 'nvie/vim-flake8' "Flake8: https://github.com/nvie/vim-flake8
 Plugin 'archseer/colibri.vim' "Subtle, elegant color scheme: https://github.com/archSeer/colibri.vim
-Plugin 'integralist/vim-mypy' "Static type checker MyPy https://github.com/Integralist/vim-mypy
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
