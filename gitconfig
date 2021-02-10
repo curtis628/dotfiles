@@ -8,8 +8,6 @@
 	ui = true
 [push]
 	default = simple
-[commit]
-	template = /Users/tcurtis/.commit_template.txt
 [diff]
 	tool = kdiff3
 [merge]

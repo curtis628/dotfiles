@@ -2,10 +2,9 @@ function prelude-prep -d "Download and setup config to run commands against a pr
   set -l usage "Usage:\n" \
               "    prelude-prep [--context CONTEXT] [-name NAME] [--namespace NAMESPACE] [--user USER] [--scripts] [--vidm] \n"
   set -l help " Download and setup configuration needed to run kubectl commands against a prelude instance.\n"\
-              "You will be prompted to enter the hostname of the prelude appliance you wish to connect to.\n\n" \
               "Examples:\n"\
-              "    #Download and store config to ~/.kube/custom.config. You will be prompted to enter the prelude hostname.\n" \
-              "    prelude-prep -n custom.config\n\n" \
+              "    #Download and store config to ~/.kube/custom.config.\n" \
+              "    prelude-prep --host=vra.test.com -n custom.config\n\n" \
               "Options:\n" \
               "    -c, --context='': The name of the k8s context to use. Default: kubernetes-admin@kubernetes\n" \
               "    --host='': The prelude appliance host to connect to. Default: $CAVA\n" \
@@ -22,7 +21,7 @@ function prelude-prep -d "Download and setup config to run commands against a pr
   set -l _user root
   set -l scripts false
   set -l vidm_init false
-  set -l ssh_identity ~/.ssh/id_rsa-unix
+  set -l ssh_identity ~/.ssh/id_rsa
 
   getopts $argv | while read -l key value
     switch $key
@@ -65,7 +64,7 @@ function prelude-prep -d "Download and setup config to run commands against a pr
       scp -r $HOME/.config/fish/functions/etc $_user@$va_host:"~"
       ssh -i $ssh_identity $_user@$va_host "mkdir -p ~/bin ~/tyler"
       ssh -i $ssh_identity $_user@$va_host "mv ~/etc/.profile ~/.profile"
-      scp -i $ssh_identity $HOME/bin/klogs-dl.sh $_user@$va_host:"~/bin/klogs-dl.sh"
+      scp -i $ssh_identity $HOME/workspace/dotfiles/bin/klogs-dl.sh $_user@$va_host:"~/bin/klogs-dl.sh"
       echo \nDone configuring scripts!
   end
 
@@ -85,8 +84,8 @@ function prelude-prep -d "Download and setup config to run commands against a pr
       ssh $_user@$va_host 'cd /root/tyler; curl -LO https://apache.claz.org/maven/maven-3/$maven_version/binaries/apache-maven-$maven_version-bin.tar.gz; tar xf apache-maven-$maven_version-bin.tar.gz'
 
       echo -e \nMoving my unix SSH keys over...
-      scp -i $ssh_identity ~/.ssh/id_rsa-unix $_user@$va_host:/root/.ssh/id_rsa
-      scp -i $ssh_identity ~/.ssh/id_rsa-unix.pub $_user@$va_host:/root/.ssh/id_rsa.pub
+      scp -i $ssh_identity ~/.ssh/id_rsa $_user@$va_host:/root/.ssh/id_rsa
+      scp -i $ssh_identity ~/.ssh/id_rsa.pub $_user@$va_host:/root/.ssh/id_rsa.pub
 
       # echo -e \nCloning git repositories...
       # echo ...tango-e2e

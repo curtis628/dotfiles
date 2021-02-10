@@ -1,10 +1,12 @@
-function retriable-command -d "Retries the provided command multiple times."
+function retriable-command -d "Retries the provided command multiple times. By default, it stops after first failure."
   set -l usage "Usage:\n" \
-              "    retriable-command [--count COUNT] [--output OUTPUT] [--namespace NAMESPACE] [--command \"COMMAND\"]\n"
+              "    retriable-command [--count COUNT] [--output OUTPUT] [--no-exit-on-failure] [--command \"COMMAND\"]\n"
   set -l help " Retries the provided command multiple times.\n\n" \
               "Examples:\n" \
               "    #Retry maven build 5 times, outputting output and results to default ~/tmp/retriable-command\n" \
               "    retriable-command --count 5 --command \"mvn clean install\"\n\n" \
+              "    #Retry specific gradle test 10 times\n" \
+              "    retriable-command --count 10 --command \"./gradlew blueprint-webapp:cleanTest blueprint-webapp:test --tests BlueprintRequestControllerTest.cancelSimpleBlueprintRequestV1 --tests BlueprintRequestControllerTest.cancelSimpleBlueprintRequestV1\"\n\n" \
               "Options:\n" \
               "    --count='': The number of times to run the command. Default: -1 (until Ctrl-C)\n" \
               "    --output='': Where to output logs and status of each try. Default: ~/tmp/retriable-command\n" \
