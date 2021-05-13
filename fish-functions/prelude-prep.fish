@@ -16,7 +16,7 @@ function prelude-prep -d "Download and setup config to run commands against a pr
               "$usage"
   set -l context kubernetes-admin@kubernetes
   set -l va_host $CAVA
-  set -l name cava-config
+  set -l name cava.config
   set -l namespace prelude
   set -l _user root
   set -l scripts false

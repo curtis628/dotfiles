@@ -39,16 +39,13 @@ function klogs-dl -d "Download all k8s logs for a given label"
     set cmd "$cmd --namespace=$namespace"
   end 
 
-  echo Running command to get pod names: $cmd
-  set -l pods (eval $cmd)
+  set -l pods (eval kpn --label=$label --namespace=$namespace)
   if test (count $pods) -eq 0
     echo "klogs-dl: No pods found matching label: $label" >&2
-    echo "  Ensure KUBECONFIG=$KUBECONFIG is correct and correct namespace" >&2
     return 1
   end
 
-  echo Found (count $pods) pods with label $label
-  echo
+
 
   set cmd "kubectl logs"
   if test -n "$namespace"
