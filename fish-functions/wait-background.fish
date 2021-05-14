@@ -22,12 +22,12 @@ function wait-background -d "Waits for background tasks to finish"
       end
   end
 
-  echo "Waiting for background jobs to complete, checking every $interval_sec seconds... Run Ctrl-C to cancel"
-  set -l jobs_output "initial"
+  echo -e "\nWaiting for background jobs to complete, checking every $interval_sec seconds... Run Ctrl-C to cancel"
+  set -l jobs_output (jobs)
   while test -n "$jobs_output"
-    set jobs_output (jobs)
-    echo -e "\nAs of" (date) ": Running jobs include: "
+    printf "\nAs of %s: Running jobs include:\n" (date)
     printf "%s\n" $jobs_output
     sleep $interval_sec
+    set jobs_output (jobs)
   end
 end
