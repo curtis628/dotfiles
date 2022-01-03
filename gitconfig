@@ -23,5 +23,3 @@
 	helper = osxkeychain
 [auto]
 	crlf = input
-[ghq]
-  root = ~/.ghq
