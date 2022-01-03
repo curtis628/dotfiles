@@ -4,3 +4,4 @@
 **/target/
 **/*.iml
 **/__pycache__/
+creds-docker-compose.*yaml
