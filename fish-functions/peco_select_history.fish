@@ -7,9 +7,11 @@ function peco_select_history -d "Use history+peco to find and run historical com
 
   history | peco $peco_flags | read selected
 
-  if string length $selected > 0
+  if test $selected
     commandline $selected
   else
     commandline ''
   end
+  echo 3
+  la
 end
